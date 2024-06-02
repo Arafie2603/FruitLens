@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">FruitLens</string>
+    <string name="title_home">Home</string>
+    <string name="title_detection">Deteksi</string>
+    <string name="title_history">Riwayat</string>
+    <string name="kuis">Mulai kuis yuk</string>
+    <string name="imageQuiz">ImageQuiz</string>
+    <string name="title">Kuis tebak buah</string>
+    <string name="description">Mulai bermain kuis untuk menguji pengetahuanmu</string>
+    <string name="title_name">Arafie</string>
+    <string name="title_greetings">Hai, Arafie</string>
+    <string name="camera">Kamera\n</string>
+    <string name="gallery">Galeri</string>
+    <string name="btn_detection">Deteksi gambar</string>
+    <string name="question">Ini adalah pertanyaan ?</string>
+    <string name="btn_answer1">Answer 1</string>
+    <string name="btn_answer2">Answer 2</string>
+    <string name="btn_answer3">Answer 3</string>
+    <string name="btn_submit">Kirim jawaban</string>
+    <string name="score">1/10</string>
+    <string name="finished">Selesai</string>
+    <string name="next_question">Lanjut ke pertanyaan selanjutnya</string>
+</resources>
