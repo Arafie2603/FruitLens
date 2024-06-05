@@ -12,5 +12,6 @@
     <color name="color_unselected">#FFFFFF</color>
     <color name="gray">#7A8089</color>
     <color name="bold_gray">#363A43</color>
+    <color name="gray_app">#f0f0f0</color>
 
 </resources>

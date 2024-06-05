@@ -20,4 +20,13 @@
     <string name="score">1/10</string>
     <string name="finished">Selesai</string>
     <string name="next_question">Lanjut ke pertanyaan selanjutnya</string>
+    <string name="placeholder_email">Masukan email anda</string>
+    <string name="placeholder_password">Masukan password anda</string>
+    <string name="btn_login">Login</string>
+    <string name="title_login">Daftar dulu, Yuk !</string>
+    <string name="title_desc">Daftar untuk buat akun kamu</string>
+    <string name="title_welcome">Hi, Selamat Datang</string>
+    <string name="desc_signUp">Silahkan masuk ke akun kamu</string>
+    <string name="placeholder_name">Masukan nama anda</string>
+    <string name="btn_SignUp">SignUp</string>
 </resources>
