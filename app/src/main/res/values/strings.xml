@@ -29,4 +29,9 @@
     <string name="desc_signUp">Silahkan masuk ke akun kamu</string>
     <string name="placeholder_name">Masukan nama anda</string>
     <string name="btn_SignUp">SignUp</string>
+    <string name="asked">Tidak punya akun ?</string>
+    <string name="logout">Logout</string>
+    <string name="tv_score">Score : 10</string>
+    <string name="tv_result">7/10</string>
+    <string name="tv_result_detection">Durian</string>
 </resources>

@@ -1,25 +1,38 @@
-package com.example.fruitlens
+package com.example.fruitlens.ui.main
 
+import android.content.Intent
 import android.content.res.ColorStateList
 import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.fruitlens.R
+import com.example.fruitlens.ViewModelFactory
 import com.example.fruitlens.databinding.ActivityMainBinding
+import com.example.fruitlens.ui.login.LoginActivity
+import com.example.fruitlens.utils.Injection
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-
+    private val viewModel by viewModels<MainViewModel>() {
+        ViewModelFactory { Injection.provideUserRepository(this) }
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
 
         val navView: BottomNavigationView = binding.navView
 
@@ -39,8 +52,7 @@ class MainActivity : AppCompatActivity() {
         navView.itemTextColor = colorStateList
 
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
+
         val appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.navigation_home, R.id.navigation_add_detection, R.id.navigation_history
@@ -48,5 +60,29 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        viewModel.getSession().observe(this) { user ->
+            user?.let {
+                if (user.isLogin) {
+//                    startActivity(Intent(this, LoginActivity::class.java))
+                } else {
+                    startActivity(Intent(this, LoginActivity::class.java))
+                }
+            } ?: run {
+                startActivity(Intent(this, LoginActivity::class.java))
+                Log.e("HomeFragment", "User session is null")
+            }
+        }
+    }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_action, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.logout) {
+            viewModel.logout()
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
