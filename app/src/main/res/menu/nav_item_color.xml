@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked="true" android:color="@color/color_selected"
+        android:title="selected" />
+    <item android:color="@color/color_unselected"
+        android:title="unselected" />
+    <item android:state_checked="true" android:color="@color/color_selected"
+        android:title="TODO" />
+    <item android:state_pressed="true" android:color="@color/color_unselected"
+        android:title="TODO" />
+    <item android:color="@color/color_unselected"
+        android:title="TODO" />
+</selector>
